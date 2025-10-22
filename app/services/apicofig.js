@@ -20,6 +20,7 @@ import axios from "axios";
 import { filterActiveItems } from "../utils/FilterUtils/filterUtils";
 
 const isServer = typeof window === "undefined";
+console.log(`[apicofig] isServer: ${isServer} - NODE_ENV=${process.env.NODE_ENV}`);
 const API_URL = isServer
   ? process.env.API_INTERNAL_URL // for server-side usage (SSR/SSG)
   : process.env.NEXT_PUBLIC_API_URL; // for client-side usage (CSR)
