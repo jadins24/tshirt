@@ -1,0 +1,48 @@
+.design-image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      flex: 0 1 calc(50% - 0.5rem); // 2 items per row with gap
+  
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        user-select: none;
+        pointer-events: none;
+      }
+  
+      .image-edit-area-position {
+        position: absolute;
+        top: 17%;
+  
+        canvas.canvas-container {
+          pointer-events: none;
+          display: block;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .design-image-list {
+      flex-direction: column;
+    }
+  
+    .image-container {
+      flex: 1 1 100%;
+    }
+  }
+  

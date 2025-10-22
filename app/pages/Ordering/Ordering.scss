@@ -1,0 +1,517 @@
+//Order Page
+
+.orderingpage {
+    .orderingpageContainer {
+      .orderingpageHead {
+        height: 100px;
+        background-color: #ffffff;
+      }
+  
+      .orderingpageHero {
+        width: 90%;
+        //background-color: #f0f0f0;
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+  
+        .designTshirt {
+          display: flex;
+          gap: 40px;
+          padding: 20px;
+          border-radius: 8px;
+          margin-bottom: 20px;
+  
+          .d {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+  
+            .designPosition {
+              display: flex;
+              // flex-direction: column;
+              // height: 350px;
+              border-radius: 10px;
+              position: relative;
+  
+              // @media (max-width: 1024px) {
+              //   flex-direction: column;
+              //    height: 350px;
+              // }
+  
+              .smallImgDesigns {
+                align-items: center;
+                text-align: center;
+                padding: 10px 5px;
+                // background-color: #2391eb;
+                // background-color: #f0f0f0;
+                border-radius: 10px;
+                margin-top: 10px;
+                cursor: pointer;
+  
+                p {
+                  color: white;
+                  padding: 2px;
+                  font-size: 12px;
+                  margin: 0;
+                }
+              }
+            }
+          }
+  
+          .orderingImage {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+  
+            img {
+              max-width: 100%;
+              border-radius: 10px;
+            }
+  
+            .arrowIcon {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 18px;
+              background-color: white;
+              color: rgb(55, 54, 54);
+              border: 1px solid black;
+              border-radius: 50%;
+              padding: 5px;
+              cursor: pointer;
+              z-index: 10;
+            }
+  
+            .leftArrow {
+              // left: -33px;
+              left: -10px;
+              bottom: 30px;
+            }
+  
+            .rightArrow {
+              right: -10px;
+            }
+          }
+        }
+  
+        /* Mobile (Small devices) */
+        @media (min-width: 300px) and (max-width: 599px) {
+          .designTshirt {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
+          }
+  
+          .d {
+            .designPosition {
+              // height: auto;
+              flex-direction: row;
+              height: 70px;
+              width: 100%;
+            }
+          }
+  
+          .orderingImage {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+  
+          .orderingImage img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+          }
+  
+          .smallImgDesigns {
+            width: 100%;
+            padding: 12px 5px;
+            margin-top: 15px;
+            font-size: 14px;
+          }
+  
+          /* Adjust arrow position on mobile */
+          .arrowIcon {
+            left: 0;
+            right: 0;
+          }
+  
+          .leftArrow {
+            left: 1px;
+          }
+  
+          .rightArrow {
+            left: 90%;
+          }
+        }
+  
+        .orderingpageReview {
+          .orderingReviewContent {
+            padding: 0px 20px;
+            margin-bottom: 20px;
+            // width: 50%;
+  
+            a {
+              text-decoration: none !important;
+            }
+  
+            h2 {
+              font-size: 1.5rem;
+              margin: 10px 0;
+            }
+  
+            .rating {
+              font-size: 1rem;
+              color: #ffc107;
+              display: flex;
+              align-items: center;
+              gap: 2px;
+            }
+          }
+  
+          .orderingpageColours {
+            padding: 0px 20px;
+            h2 {
+              font-size: 1.2rem;
+              margin-bottom: 10px;
+            }
+  
+            .colorOptions {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+              gap: 10px;
+              max-width: 100%;
+              padding-bottom: 15px;
+              .colorBox {
+                width: 30px;
+                height: 30px;
+                border-radius: 4px;
+                cursor: pointer;
+                border: 1px solid #ccc;
+                position: relative;
+  
+                &:hover {
+                  border-color: #000;
+                }
+  
+                &.selected {
+                  //border: 2px solid #000;
+                  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                }
+  
+                .checkmark {
+                  position: absolute;
+                  top: 2px;
+                  left: 7px;
+                  font-size: 18px;
+                  color: rgb(83, 73, 73);
+                }
+              }
+            }
+  
+            p {
+              color: #454545;
+              font-size: 20px;
+              padding-bottom: 30px
+            }
+  
+            .btn {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .orderingpageContents {
+        width: 80%;
+        justify-self: center;
+        margin: 0 auto;
+  
+        .orderingpageContent {
+          h2 {
+            color: #2e2e2e;
+            font-size: 22px;
+            font-weight: 600;
+          }
+  
+          p {
+            color: #7d7d7d;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 2;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (min-width: 300px) {
+    .orderingpageContainer {
+      .orderingpageHero {
+        flex-direction: column;
+        .orderingpageReview,
+        .designTshirt {
+          width: 100%;
+          .orderingImage {
+            img {
+              height: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .orderingpageContainer {
+      .orderingpageHero {
+        flex-direction: column;
+        .orderingpageReview,
+        .designTshirt {
+          width: 100%;
+          .orderingImage {
+            img {
+              height: 500px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .orderingpageContainer {
+      .orderingpageHero {
+        flex-direction: row;
+        .orderingpageReview,
+        .designTshirt {
+          width: calc(50% - 20px);
+          .d {
+            .designPosition {
+              flex-direction: column;
+              height: 350px;
+            }
+          }
+          .orderingImage {
+            img {
+              height: 500px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .orderingReview {
+    width: 80%;
+    justify-self: center;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    .orderingReviewHead {
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+  
+      .rating {
+        font-size: 1rem;
+        color: #ffc107;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        //padding-left: 15px;
+      }
+      p {
+        color: #8d8989;
+      }
+    }
+  
+    .orderingReviewStars {
+      // width: 50%;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+  
+    .orderingReviewStars p {
+      display: flex;
+      align-items: center;
+    }
+  
+    .orderingReviewStars {
+      .bar-container {
+        display: flex;
+      }
+      .bar {
+        width: 50%;
+        height: 12px;
+        background-color: #ccc;
+        margin: 0 8px;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        // margin-top: 2%;
+      }
+      p {
+        color: #8d8989;
+        //font-size: 18px;
+      }
+    }
+  
+    .orderingReviewStars .bar .bar-details {
+      height: 100%;
+      background-color: #f1c40f;
+      border-radius: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  @media screen and (min-width: 300px) {
+    .orderingReview {
+      .orderingReviewHead {
+        display: block;
+      }
+    }
+    .orderingReviewStars {
+      width: 100%;
+      .bar-container {
+        .bar {
+          margin-top: 6%;
+        }
+      }
+    }
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1023px) {
+    .orderingReviewStars {
+      width: 100%;
+      .bar-container {
+        .bar {
+          margin-top: 2%;
+        }
+      }
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .orderingReview {
+      .orderingReviewHead {
+        display: flex;
+  
+        .rating {
+          padding-left: 15px;
+        }
+      }
+    }
+    .orderingReviewStars {
+      width: 80%;
+      .bar-container {
+        .bar {
+          margin-top: 2%;
+        }
+      }
+    }
+  }
+  
+  .orderingpageTestimonial {
+    width: 80%;
+    justify-self: center;
+    margin: 0 auto;
+    padding: 40px 0px;
+  
+    .orderingTestimonialHead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      h2 {
+        font-size: 24px;
+        padding-bottom: 20px;
+      }
+  
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #8d8989;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+    }
+  
+    .orderTestimonialContents {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+  
+      .testimonialCard {
+        text-align: center;
+        flex: 1 1 calc(33.33% - 20px);
+        box-sizing: border-box;
+  
+        .rating {
+          display: flex;
+          justify-content: center;
+          font-size: 1rem;
+          color: #ffc107;
+          gap: 10px;
+  
+          i {
+            margin-right: 2px;
+          }
+        }
+  
+        h2 {
+          font-size: 1.5rem;
+          color: #333;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #8d8d8d;
+          line-height: 1.7;
+        }
+      }
+    }
+  
+    // Responsive adjustments
+    @media (max-width: 1024px) {
+      .orderTestimonialContents .testimonialCard {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .orderingTestimonialHead {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+  
+        h2 {
+          font-size: 22px;
+        }
+  
+        a {
+          font-size: 0.9rem;
+        }
+      }
+  
+      .orderTestimonialContents .testimonialCard {
+        flex: 1 1 100%;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .orderingTestimonialHead h2 {
+        font-size: 1.5rem;
+      }
+  
+      .orderTestimonialContents .testimonialCard {
+        p {
+          font-size: 0.9rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,262 @@
+.orderhistory-page {
+  padding: 20px 0;
+  
+  .orderhistory-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .orderhistory-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      gap: 20px;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .box-container {
+        flex-shrink: 0;
+        
+        .orderhistory-head {
+          font-size: 1.75rem;
+          margin-bottom: 0;
+          font-weight: 700;
+          color: #2c3e50;
+          background: linear-gradient(135deg, #2c3e50, #3498db);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      }
+   
+      .table-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+
+        @media (max-width: 480px) {
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .dropdown-filters {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          align-items: center;
+
+          @media (max-width: 480px) {
+            width: 100%;
+            justify-content: space-between;
+          }
+
+          select,
+          input {
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            border: 2px solid #e1e8ed;
+            outline: none;
+            width: 160px;
+            transition: all 0.3s ease;
+            background: white;
+            
+            &:focus {
+              border-color: #3498db;
+              box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            }
+            
+            @media (max-width: 768px) {
+              width: 140px;
+            }
+            
+            @media (max-width: 480px) {
+              width: calc(50% - 6px);
+              margin-bottom: 8px;
+            }
+          }
+
+          .clear-btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(231, 76, 60, 0.2);
+            
+            &:hover {
+              transform: translateY(-1px);
+              box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+            }
+            
+            &:active {
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+
+    .orderhistory-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px 0;
+      
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .no-orders {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 60px 20px;
+        font-size: 1.1rem;
+        color: #7f8c8d;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border: 2px dashed #bdc3c7;
+      }
+   
+      .orderhistory-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid #e1e8ed;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+          border-color: #3498db;
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #3498db, #2ecc71);
+        }
+
+        .orderhistory-info {
+          .order-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            gap: 15px;
+            
+            .order-product {
+              font-size: 1.1rem;
+              font-weight: 600;
+              color: #2c3e50;
+              margin: 0;
+              flex: 1;
+              word-break: break-word;
+            }
+
+            .order-status {
+              font-weight: 600;
+              padding: 6px 14px;
+              border-radius: 20px;
+              font-size: 0.8rem;
+              text-transform: capitalize;
+              white-space: nowrap;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              
+              // Status color variants
+              &.order_placed {
+                background: linear-gradient(135deg, #2196f3, #1976d2);
+                color: white;
+              }
+
+              &.printing {
+                background: linear-gradient(135deg, #ff9800, #f57c00);
+                color: white;
+              }
+
+              &.packed {
+                background: linear-gradient(135deg, #673ab7, #5e35b1);
+                color: white;
+              }
+
+              &.shipped {
+                background: linear-gradient(135deg, #17a2b8, #138496);
+                color: white;
+              }
+
+              &.delivered {
+                background: linear-gradient(135deg, #28a745, #1e7e34);
+                color: white;
+              }
+
+              &.cancelled {
+                background: linear-gradient(135deg, #dc3545, #c82333);
+                color: white;
+              }
+
+              &.pending {
+                background: linear-gradient(135deg, #6c757d, #5a6268);
+                color: white;
+              }
+
+              &.unknown {
+                background: linear-gradient(135deg, #adb5bd, #868e96);
+                color: white;
+              }
+            }
+          }
+
+          .order-description {
+            font-size: 0.95rem;
+            color: #34495e;
+            font-weight: 500;
+            margin: 12px 0;
+            line-height: 1.5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .strong-text {
+              color: #2c3e50;
+              font-weight: 600;
+              font-size: 1rem;
+            }
+            
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Pagination container styling
+.pagination-container {
+  margin-top: 40px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}

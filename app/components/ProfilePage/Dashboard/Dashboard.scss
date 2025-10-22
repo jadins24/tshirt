@@ -1,0 +1,69 @@
+.dashboard{
+
+  .dashboard-container{
+   margin-top: 10px;
+
+    .cards-grid-container{
+      margin-top: 20px;
+
+      .stats-cards-column {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+
+        .stats-card {
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+       //   border: 1px solid gainsboro;
+          padding: 1.5rem;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: calc((100% - 40px) / 3);
+
+          .count {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #222;
+            text-align: end;
+          }
+
+          .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+
+            .icon-container {
+              background-color: #e6f3ff;
+              padding: 10px;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              svg {
+                font-size: 24px;
+                color: #2fa1ff;
+              }
+            }
+
+          }
+
+          .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #444;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

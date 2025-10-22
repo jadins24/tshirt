@@ -1,0 +1,637 @@
+
+//Color and Size
+
+.category-section {
+    background: #ffffff;
+  }
+  
+  .categories {
+  
+    .categoriesContainer {
+      width: 90%;
+      justify-self: center;
+      margin: 0 auto;
+      padding-bottom: 60px;
+
+      .selectedFilters {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 8px;
+        background: #f0f0f0;
+        // display: none;
+      }
+  
+      .selectedBadge {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+  
+      .removeFilterBtn {
+        margin-left: 5px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        color: #ff0000;
+      }
+  
+      .removeAllBtn {
+        background-color: #2fa1ff;
+        color: white;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      .categoriesContent {
+        display: flex;
+        gap: 25px;
+        flex-direction: row;
+      
+        padding-top: 100px;
+  
+        .categoriesFilter {
+          width: 25%;
+          //padding: 20px;
+          border-radius: 15px;
+          box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+          background-color: white;
+          color: black;
+          transition: all 0.3s ease;
+  
+          &.hidden {
+            display: none;
+          }
+  
+          &.visible {
+            display: block;
+          }
+  
+          .categoriesFilterGroup {
+            margin-bottom: 20px;
+  
+            //color-checkbox
+  
+            .colorsFilterGroup {
+              margin-bottom: 15px;
+            }
+  
+            .colorsFilterGroup .categoriesCustomSelect {
+              display: flex;
+              flex-wrap: wrap;
+              // gap: 15px;
+            }
+  
+            .colorsDropdown {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-wrap: wrap;
+              //gap: 10px;
+            }
+  
+            .colorOption {
+              display: flex;
+              align-items: center;
+            }
+  
+            .colorCheckboxInput {
+              display: none;
+            }
+  
+            .colorCheckboxLabel {
+              display: flex;
+              align-items: center;
+              // cursor: pointer;
+            }
+  
+            .colorSwatch {
+              width: 30px;
+              height: 30px;
+              // border-radius: 50%;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+              margin-left: 8px;
+              cursor: pointer;
+              background-color: white;
+            }
+  
+            .colorSwatch:hover {
+              opacity: 0.8;
+            }
+  
+            .colorsFilterGroup .categoriesFilterName {
+              cursor: pointer;
+            }
+  
+            .colorsCustomSelect {
+              padding: 0px 20px;
+            }
+  
+            //finish
+  
+            .categoriesFilterName {
+              // color: #2fa1ff;
+              color: #004494;
+              padding: 5px 20px;
+            }
+  
+            label {
+              gap: 5px;
+              cursor: pointer;
+              display: flex;
+              // justify-content: space-between;
+              align-items: center;
+              padding: 2px 0px;
+  
+              span {
+                display: inline-block;
+                margin-left: auto;
+                transition: transform 0.3s ease;
+              }
+            }
+  
+            .categoriesCustomSelect {
+              .categoriesDropdown {
+                list-style-type: none;
+                padding: 0;
+  
+                li {
+                  padding: 7px 20px;
+                  cursor: pointer;
+                  color: black;
+  
+                  &:hover {
+                    background-color: #2fa1ff;
+                    border-radius: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+  
+        .categoriesCards {
+          width: 75%;
+          transition: width 0.3s ease;
+          
+            h2{
+              padding-bottom: 20px;
+            }
+
+          .categoriesSliderContent {
+            display: flex;
+  
+            .categoriesCardInfo {
+              padding: 0px 12px;
+              font-weight: bold;
+              border-radius: 0px 0px 8px 8px;
+              text-align: center;
+              font-size: 16px;
+  
+              p {
+                color: black;
+              }
+            }
+  
+            .categoriesCardIcon {
+              color: black;
+              padding: 12px;
+              margin-top: 2%;
+            }
+          }
+  
+          .categoriesColorsList {
+            display: flex;
+            align-items: center;
+            padding: 5px 12px;
+            gap: 4px;
+            flex-wrap: wrap;
+          }
+  
+          .categoriesColorsBox {
+            width: 12px;
+            height: 13px;
+            border-radius: 2px;
+          }
+  
+          .categoriesColorValue {
+            font-size: 8px;
+            color: #2d2d2d;
+            margin-left: 0px;
+          }
+  
+          .categoriesCardRating {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            color: #e8a700;
+            padding: 5px 12px;
+          }
+  
+          .categoriesRating {
+            margin-right: 2px;
+          }
+  
+          .categoriesStars svg {
+            color: #e8a700;
+          }
+  
+          .categoriesRatingInfo {
+            margin-left: 2px;
+            color: #454545;
+          }
+  
+          .categoriesShirtSize {
+            padding: 5px 12px;
+            font-size: 14px;
+            color: #454545;
+          }
+  
+          .categoriesCardAmount {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            padding: 5px 12px;
+          }
+  
+          .categoriesPrice {
+            font-weight: bold;
+            color: #2fa1ff;
+            font-size: 18px;
+          }
+  
+          .categoriesDiscount {
+            font-size: 18px;
+            color: #929292;
+            text-decoration: line-through;
+            margin-left: 10px;
+          }
+  
+          .categoriesAddCart {
+            background-color: #1e90ff;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 0px 0px 4px 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+          }
+  
+          .categoriesAddCart:hover {
+            background-color: #0b73db;
+          }
+  
+          .categoriesCardsContent {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+  
+            a {
+              text-decoration: none;
+            }
+  
+            .categoriesCardItem {
+              width: calc(33.33% - 20px);
+              background: white;
+              border: 1px solid #e0e0e0;
+              border-radius: 8px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              cursor: pointer;
+              transition: transform 0.3s ease;
+  
+              .categoriesCardImage {
+                width: 100%;
+                height: 280px;
+                object-fit: cover;
+                display: block;
+                margin: 0;
+                border-radius: 8px 8px 0px 0px;
+              }
+  
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @media (min-width: 300px) and (max-width: 599px) {
+      .categoriesContainer {
+        //padding: 20px;
+        .selectedFilters {
+          margin-top: 15%;
+        }
+  
+        .categoriesContent {
+          flex-direction: column;
+  
+          .categoriesFilter {
+            width: 100%;
+            padding: 10px 0px;
+          }
+  
+          .categoriesCards {
+            width: 100%;
+  
+            .categoriesCardsContent {
+              flex-direction: column;
+  
+              .categoriesCardItem {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @media (min-width: 600px) and (max-width: 1023px) {
+      .categoriesContainer {
+        .selectedFilters {
+          margin-top: 8%;
+        }
+        .categoriesContent {
+          .categoriesFilter {
+            width: 40%;
+            height: 160vh;
+            padding: 10px 0px;
+          }
+  
+          .categoriesCards {
+            width: 60%;
+  
+            .categoriesCardsContent {
+              .categoriesCardItem {
+                width: calc(45% - 10px);
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @media (min-width: 1024px) {
+      .categoriesContainer {
+        .categoriesContent {
+          .categoriesFilter {
+            width: 25%;
+            height: 150vh;
+            background: #f0f0f0;
+            padding: 20px;
+          }
+  
+          .categoriesCards {
+            width: 75%;
+  
+            .categoriesCardsContent {
+              .categoriesCardItem {
+                width: calc(33.33% - 20px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  //Categories
+  
+  .categories-container {
+    background-color: #f7f7f7;
+    .categories {
+      margin: 0% 8%;
+      // width: 80%;
+      justify-self: center;
+  
+      //Favourite design
+      .categoryCards {
+        // padding:0px 20px;
+  
+        .category-show {
+          // display: flex;
+  
+          h3 {
+            color: #004494;
+            padding-bottom: 10px;
+          }
+        }
+        a {
+          text-decoration: none !important;
+          margin-left: 59%;
+        }
+  
+        h4 {
+          color: #004494;
+          padding-bottom: 10px;
+          // margin-left: 59%;
+          cursor: pointer;
+        }
+  
+        .categoryCardsContent {
+          display: flex;
+          flex-wrap: wrap;
+          // gap: 50px;
+          justify-content: space-between;
+  
+          .categorycardItem {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            // margin-bottom: 25px;
+            justify-content: space-around;
+            overflow: hidden;
+  
+            .categorycardItem:hover {
+              transform: scale(1.05);
+            }
+  
+            .categorycardItem:hover .categoryImage {
+              transform: scale(1.1);
+            }
+  
+            // .categoryImageContainer{
+            //   border-radius: 12px;
+            // }
+  
+            .categoryImage {
+              width: 100%;
+              height: 100px;
+              // object-fit: cover;
+              object-fit: contain;
+              transition: transform 0.3s ease;
+            }
+          }
+        }
+      }
+  
+      @media (min-width: 300px) and (max-width: 599px) {
+        // .categories{
+        //   width: 70%;
+        //   padding: 30px;
+        // }
+  
+        .categoriesCards {
+          .category-show {
+            display: block;
+          }
+          a {
+            margin-left: 0%;
+          }
+        }
+  
+        .categorycardItem {
+          width: 100%;
+          // .categoryNumber{
+          //   text-align: center;
+          // }
+        }
+      }
+  
+      @media (min-width: 600px) and (max-width: 1023px) {
+        .categorycardItem {
+          width: calc(45% - 20px);
+        }
+      }
+  
+      @media (min-width: 1024px) {
+        .categories {
+          width: 80%;
+        }
+        .categoryCards {
+          margin: 0 auto;
+          margin-top: 5%;
+          margin-bottom: 5%;
+  
+          .category-show {
+            display: flex;
+          }
+  
+          .categorycardItem {
+            width: calc(15% - 25px);
+          }
+        }
+      }
+  
+      //filter-Types
+  
+      // .type-section{
+      //   background-color: #007bff;
+  
+      .types-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+  
+        .type-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: space-between;
+        }
+  
+        .type-col {
+          box-sizing: border-box;
+          margin-bottom: 20px;
+          flex: 1 1 calc(33.33% - 20px);
+          cursor: pointer;
+  
+          .type-head {
+            font-size: 1.2rem;
+            color: #333;
+          }
+  
+          .type-img img {
+            height: 250px;
+            object-fit: cover;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          }
+  
+          .type-details p {
+            margin: 5px 0;
+          }
+        }
+      }
+  
+      @media (min-width: 300px) and (max-width: 599px) {
+        .types-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+  
+          .type-col {
+            flex: 1 1 100%;
+            text-align: center;
+  
+            .type-head {
+              font-size: 1.2rem;
+              margin-bottom: 10px;
+            }
+  
+            .type-img img {
+              width: 100%;
+              max-width: 250px;
+              height: auto;
+              margin: 0 auto;
+            }
+  
+            .type-details p {
+              margin: 5px 0;
+              text-align: center;
+            }
+          }
+        }
+      }
+  
+      @media (min-width: 600px) and (max-width: 1023px) {
+        .types-container {
+          .type-col {
+            flex: 1 1 calc(60% - 20px);
+          }
+        }
+      }
+  
+      @media (min-width: 1024px) {
+        .types-container {
+          .type-col {
+            flex: 1 1 calc(25% - 20px);
+          }
+        }
+      }
+    }
+  }
+  
+  //checkbox style
+  
+  .selectedFilters {
+    margin-bottom: 20px;
+  }
+  
+  .selectedFilters ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .selectedFilters li {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+  }
